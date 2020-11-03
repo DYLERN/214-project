@@ -1,5 +1,5 @@
 compile:
-	clang++ -g -std=c++17 *.cpp **/*.cpp -o build/main.out
+	clang++ -g -std=c++17 src/*.cpp src/**/*.cpp -o build/main.out
 
 run:
 	./build/main.out
