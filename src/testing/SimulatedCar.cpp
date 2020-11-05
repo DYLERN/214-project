@@ -7,17 +7,49 @@ SimulatedCar::SimulatedCar(){
     tyres = NULL;
     engine = NULL;
     aero = NULL;
-    currentWeather = sunny;
 
 }
+SimulatedCar::~SimulatedCar(){
 
-SimulatedCar::SimulatedCar(weather w, float mPrice, float mWeight){
+    if(chassis != NULL){
 
-    currentWeather = w;
+        delete chassis;
+
+    }
+
+    if(tyres != NULL){
+
+        delete tyres;
+
+    }
+
+    if(engine != NULL){
+
+        delete engine;
+
+    }
+
+    if(aero != NULL){
+
+        delete aero;
+
+    }
+
+    if(electronics != NULL){
+
+        delete electronics;
+
+    }
 
 }
 
 void SimulatedCar::setChassis(virtualChassis* chass){
+
+    if(chassis != NULL){
+
+        delete chassis;
+
+    }
 
     chassis = chass;
 
@@ -25,11 +57,23 @@ void SimulatedCar::setChassis(virtualChassis* chass){
 
 void SimulatedCar::setTyres(virtualTyre* tyre){
 
+    if(tyres != NULL){
+
+        delete tyres;
+
+    }
+
     tyres = tyre;
 
 }
 
 void SimulatedCar::setEngine(virtualEngine* eng){
+
+    if(engine != NULL){
+
+        delete engine;
+
+    }
 
     engine = eng;
 
@@ -37,23 +81,29 @@ void SimulatedCar::setEngine(virtualEngine* eng){
 
 void SimulatedCar::setAero(virtualAerodynamics* aer){
 
+    if(aero != NULL){
+
+        delete aero;
+
+    }
+
     aero = aer;
 
 }
 
 void SimulatedCar::setElectronics(virtualElectronics* elec){
 
+    if(electronics != NULL){
+
+        delete electronics;
+
+    }
+
     electronics = elec;
 
 }
 
-void SimulatedCar::setWeather(weather w){
-
-    currentWeather = w;
-
-}
-
-void SimulatedCar::testCar(float maxPrice, float maxWeight){
+void SimulatedCar::testCar(float maxPrice, float maxWeight, std::string weather){
 
     std::string result = "";
 
@@ -76,6 +126,8 @@ void SimulatedCar::testCar(float maxPrice, float maxWeight){
 
         }
 
+
+
         if(weight <= maxWeight){
 
             result += "Weight: Car is within weight limit.\n";
@@ -90,7 +142,7 @@ void SimulatedCar::testCar(float maxPrice, float maxWeight){
         int temp = rand() % 100 + 2600;
         int speed = rand() % 70 + 300;
 
-        result += "Lap Completed in: " + std::to_string(time) + " seconds.\nMax engine temperature: " + std::to_string(temp) + "\nTop speed: " + std::to_string(speed) + 
+        result += "Lap Completed in: " + std::to_string(time) + " seconds during " + weather + " weather.\nMax engine temperature: " + std::to_string(temp) + "\nTop speed: " + std::to_string(speed) + 
         "\nCar safety check: Success\nFinal decision: Formula One Car is good to go.\n";
 
     }else{
@@ -109,7 +161,7 @@ void SimulatedCar::testChassis(){
 
     if(chassis != NULL){
 
-        if(chassis->getCollisionRating() < 50){
+        if(chassis->getCollisionRating() > 50){
 
             result += "Chassis Testing has completed:\nChassis survived the collison test and is approved for use.\n\n";
 

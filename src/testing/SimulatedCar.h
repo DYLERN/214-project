@@ -17,28 +17,18 @@ virtualTyre* tyres;
 virtualEngine* engine;
 virtualAerodynamics* aero;
 virtualElectronics* electronics;
-enum weather{
-
-    raining,
-    sunny,
-    windy,
-    thunderstorm
-
-};
-weather currentWeather = sunny;
 
 public:
 SimulatedCar();
-SimulatedCar(weather, float, float);
+~SimulatedCar();
 void setChassis(virtualChassis*);
 void setTyres(virtualTyre*);
 void setEngine(virtualEngine*);
 void setAero(virtualAerodynamics*);
 void setElectronics(virtualElectronics*);
-void setWeather(weather);
 void setElectronics();
 
-void testCar(float, float);
+void testCar(float, float, std::string);
 void testChassis();
 void testTyre();
 void testEngine();
