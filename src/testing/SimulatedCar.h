@@ -20,6 +20,7 @@ virtualElectronics* electronics;
 
 public:
 SimulatedCar();
+~SimulatedCar();
 void setChassis(virtualChassis*);
 void setTyres(virtualTyre*);
 void setEngine(virtualEngine*);
