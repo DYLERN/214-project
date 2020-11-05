@@ -9,7 +9,7 @@ protected:
 float powerDraw;
 
 public:
-virtualElectronics(float, float, string, float, float);
+virtualElectronics(float, float, std::string, float, float);
 float getDraw();
 
 };

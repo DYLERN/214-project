@@ -1,6 +1,6 @@
 #include "virtualAerodynamics.h"
 
-virtualAerodynamics::virtualAerodynamics(float rating, float pricing, string description, float weight, float safety){
+virtualAerodynamics::virtualAerodynamics(float rating, float pricing, std::string description, float weight, float safety){
 
     this->rating = rating;
     this->pricing = pricing;

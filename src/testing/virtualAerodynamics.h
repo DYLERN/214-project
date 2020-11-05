@@ -9,7 +9,7 @@ protected:
 float rating;
 
 public:
-virtualAerodynamics(float, float, string, float, float);
+virtualAerodynamics(float, float, std::string, float, float);
 float getRating();
 
 };

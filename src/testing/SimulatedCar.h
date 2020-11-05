@@ -2,9 +2,12 @@
 #define __SIMULATEDCAR_H__
 
 #include <string>
-#include "virtualParts.h"
+#include "virtualTyre.h"
+#include "virtualChassis.h"
+#include "virtualEngine.h"
+#include "virtualAerodynamics.h"
+#include "virtualElectronics.h"
 
-using namespace std;
 
 class SimulatedCar{
 

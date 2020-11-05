@@ -1,6 +1,6 @@
 #include "virtualEngine.h"
 
-virtualEngine::virtualEngine(float horsepower, float pricing, string description, float weight, float safety){
+virtualEngine::virtualEngine(float horsepower, float pricing, std::string description, float weight, float safety){
 
     this->horsepower = horsepower;
     this->pricing = pricing;

@@ -3,13 +3,14 @@
 
 #include "virtualParts.h"
 
+
 class virtualChassis : public virtualParts{
 
 private:
 float collisionRating;
 
 public:
-virtualChassis(float, float, string, float, float);
+virtualChassis(float, float, std::string, float, float);
 float getCollisionRating();
 
 };

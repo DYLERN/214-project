@@ -9,7 +9,7 @@ protected:
 float horsepower;
 
 public:
-virtualEngine(float, float, string, float, float);
+virtualEngine(float, float, std::string, float, float);
 float getPower();
 
 };

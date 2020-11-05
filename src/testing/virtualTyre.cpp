@@ -1,6 +1,6 @@
 #include "virtualTyre.h"
 
-virtualTyre::virtualTyre(float thickness, float grip, float pricing, string description, float weight, float safety){
+virtualTyre::virtualTyre(float thickness, float grip, float pricing, std::string description, float weight, float safety){
 
     this->thickness = thickness;
     this->grip = grip;

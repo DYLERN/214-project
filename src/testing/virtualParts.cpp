@@ -6,7 +6,7 @@ float virtualParts::getPricing(){
 
 }
 
-string virtualParts::getDescription(){
+std::string virtualParts::getDescription(){
 
     return description;
 

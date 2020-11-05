@@ -1,6 +1,6 @@
 #include "virtualElectronics.h"
 
-virtualElectronics::virtualElectronics(float draw, float pricing, string description, float weight, float safety){
+virtualElectronics::virtualElectronics(float draw, float pricing, std::string description, float weight, float safety){
 
     this->powerDraw = draw;
     this->pricing = pricing;
