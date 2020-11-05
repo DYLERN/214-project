@@ -1,24 +1,34 @@
-#include "testing/virtualTyre.h"
-#include "testing/SimulatedCar.h"
-#include "testing/virtualAerodynamics.h"
-#include "testing/virtualChassis.h"
-#include "testing/virtualElectronics.h"
-#include "testing/virtualEngine.h"
-#include "testing/virtualParts.h"
+#include "core/FormulaOneCar.h"
+#include "engineering/Engineer.h"
+#include "engineering/CurrentCarConstructor.h"
+#include "engineering/RacingCarConstructor.h"
+
+#include <iostream>
+
+using namespace std;
 
 int main() {
 
-    float thickness = 1000;
-    float grip = 1000;
-    float pricing = 1000;
-    std::string description = "Soft Tyres";
-    float weight = 1000;
-    float safety = 1000;
+    int numCars = 4;
 
-    virtualTyre* tyre = new virtualTyre(thickness, grip, pricing, description, weight, safety);
-    SimulatedCar* car = new SimulatedCar();
-    car->setTyres(tyre);
-    car->testTyre();
+    RacingCarConstructor* bluePrints[numCars];
+    Engineer* engineers[numCars];
+    FormulaOneCar* cars[numCars];
+
+    for(int i = 0; i < numCars; i++)
+    {
+        bluePrints[i] = new CurrentCarConstructor();
+        engineers[i] = new Engineer(bluePrints[i]);
+        cars[i] = engineers[i]->constructCar();
+    }
+
+
+    for(int i = 0; i < numCars; i++)
+    {
+        delete cars[i];
+        delete engineers[i];
+        delete bluePrints[i];
+    }
 
     return 0;
 }
