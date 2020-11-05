@@ -1,7 +1,7 @@
 #ifndef NAVIGATIONALAI_H
 #define NAVIGATIONALAI_H
 
-#include "RacingCarPart.h"
+#include "../core/RacingCarPart.h"
 
 class NavigationalAI : public RacingCarPart
 {

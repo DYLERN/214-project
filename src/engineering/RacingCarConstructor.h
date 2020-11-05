@@ -6,7 +6,7 @@
 #include "TyreDepartment.h"
 #include "EngineDepartment.h"
 #include "ElectronicsDepartment.h"
-#include "FormulaOneCar.h"
+#include "../core/FormulaOneCar.h"
 
 class RacingCarConstructor
 {
@@ -15,7 +15,7 @@ class RacingCarConstructor
         ChassisDepartment* chassisDepartment;
         TyreDepartment* tyreDepartment;
         EngineDepartment* engineDepartment;
-        ElectonicsDepartment* electronicsDepartment;
+        ElectronicsDepartment* electronicsDepartment;
 
     public:
         RacingCarConstructor();

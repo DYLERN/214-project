@@ -2,7 +2,7 @@
 #define __ENGINEDEPARTMENT_H__
 
 #include "EngineeringDepartment.h"
-#include "Engine.h"
+#include "../core/Engine.h"
 
 class EngineDepartment : public EngineeringDepartment
 {

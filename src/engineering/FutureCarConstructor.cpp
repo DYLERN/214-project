@@ -31,7 +31,7 @@ void FutureCarConstructor::addTyres()
 
 void FutureCarConstructor::addAI()
 {
-    car->setAI(new NavigationalAI("AI", "N/A", 2398482.54, "Extremely expensive experimental AI.", 0, 60.2, "NewHorizons IOS"));
+    car->setAI(new NavigationalAI("AI", "N/A", 2398482.54f, "Extremely expensive experimental AI.", 0.0f, 60.2f, "NewHorizons IOS"));
 }
 
 FutureRacingCar* FutureCarConstructor::getCar()

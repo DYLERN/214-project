@@ -1,7 +1,7 @@
 #ifndef FUTURERACINGCAR_H
 #define FUTURERACINGCAR_H
 
-#include "FormulaOneCar.h"
+#include "../core/FormulaOneCar.h"
 #include "NavigationalAI.h"
 
 class FutureRacingCar : public FormulaOneCar

@@ -1,5 +1,5 @@
 #include "AerodynamicsDepartment.h"
-#include "VirtualAerodynamics.h"
+#include "../testing/virtualAerodynamics.h"
 #include <iostream>
 
 using namespace std;
@@ -9,31 +9,31 @@ AerodynamicsDepartment::AerodynamicsDepartment(std::string type, std::string mat
     this->aerodynamics = new Aerodynamics(type, material, pricing, description, weight, SA, rating);
     this->simCar = new SimulatedCar();
     
-    simCar->setAero(new VirtualAerodynamics(rating, pricing, description, weight, 14));
+    simCar->setAero(new virtualAerodynamics(rating, pricing, description, weight, 14.0f));
 }
-ChassisDepartment::~ChassisDepartment(){}
+AerodynamicsDepartment::~AerodynamicsDepartment(){}
 
-Aerodynamics* ChassisDepartment::develop()
+Aerodynamics* AerodynamicsDepartment::develop()
 {
     research();
     test();
     analyze();
     delete simCar;
-    return chassis;
+    return aerodynamics;
 }
 
-void ChassisDepartment::research()
+void AerodynamicsDepartment::research()
 {
     cout << "Research has been conducted and the aerodynamics provide a sustantial speed increase." << endl;
 }
 
-void ChassisDepartment::test()
+void AerodynamicsDepartment::test()
 {
     cout << "The aerodynamics is being sent for testing..." << endl << endl;
     simCar->testAero();
 }
 
-void ChassisDepartment::analyze()
+void AerodynamicsDepartment::analyze()
 {
     cout << "The aerodynamics are out of this world and will provide a competitive advantage!" << endl;
 }

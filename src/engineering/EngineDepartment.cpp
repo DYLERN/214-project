@@ -1,5 +1,5 @@
 #include "EngineDepartment.h"
-#include "VirtualEngine.h"
+#include "../testing/virtualEngine.h"
 #include <iostream>
 
 using namespace std;
@@ -9,31 +9,31 @@ EngineDepartment::EngineDepartment(std::string type, std::string material, float
     this->engine = new Engine(type, material, pricing, description, weight, horsePower);
     this->simCar = new SimulatedCar();
     
-    simCar->setEngine(new VirtualChassis(horsePower, pricing, description, weight, 100));
+    simCar->setEngine(new virtualEngine(horsePower, pricing, description, weight, 100.0f));
 }
-ChassisDepartment::~ChassisDepartment(){}
+EngineDepartment::~EngineDepartment(){}
 
-Engine* ChassisDepartment::develop()
+Engine* EngineDepartment::develop()
 {
     research();
     test();
     analyze();
     delete simCar;
-    return chassis;
+    return engine;
 }
 
-void ChassisDepartment::research()
+void EngineDepartment::research()
 {
     cout << "Research has been conducted for the engine to produce greater horsepower." << endl;
 }
 
-void ChassisDepartment::test()
+void EngineDepartment::test()
 {
     cout << "Engine is being sent for testing..." << endl << endl;
     simCar->testChassis();
 }
 
-void ChassisDepartment::analyze()
+void EngineDepartment::analyze()
 {
     cout << "The engine's horsepower is fenominal!" << endl;
 }

@@ -2,7 +2,7 @@
 #define __CHASSISDEPARTMENT_H__
 
 #include "EngineeringDepartment.h"
-#include "Chassis.h"
+#include "../core/Chassis.h"
 
 class ChassisDepartment : public EngineeringDepartment
 {

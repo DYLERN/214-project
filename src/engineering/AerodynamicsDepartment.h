@@ -2,7 +2,7 @@
 #define __AERODYNAMICSDEPARTMENT_H__
 
 #include "EngineeringDepartment.h"
-#include "Aerodynamics.h"
+#include "../core/Aerodynamics.h"
 
 class AerodynamicsDepartment : public EngineeringDepartment
 {

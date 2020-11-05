@@ -1,5 +1,5 @@
 #include "ChassisDepartment.h"
-#include "VirtualChassis.h"
+#include "../testing/virtualChassis.h"
 #include <iostream>
 
 using namespace std;
@@ -9,7 +9,7 @@ ChassisDepartment::ChassisDepartment(std::string type, std::string material, flo
     this->chassis = new Chassis(type, material, pricing, description, weight, collision);
     this->simCar = new SimulatedCar();
     
-    simCar->setChassis(new VirtualChassis(collision, pricing, description, weight, 10));
+    simCar->setChassis(new virtualChassis(collision, pricing, description, weight, 10.0f));
 }
 ChassisDepartment::~ChassisDepartment(){}
 

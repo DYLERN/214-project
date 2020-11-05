@@ -1,39 +1,39 @@
 #include "TyreDepartment.h"
-#include "VirtualTyre.h"
+#include "../testing/virtualTyre.h"
 #include <iostream>
 
 using namespace std;
 
 TyreDepartment::TyreDepartment(std::string type, std::string material, float pricing, std::string description, float weight, float thickness, float grip) : EngineeringDepartment()
 {
-    this->electronics = new Electronics(type, material, pricing, description, weight, thickness, grip);
+    this->tyre = new Tyre(type, material, pricing, description, weight, thickness, grip);
     this->simCar = new SimulatedCar();
     
-    simCar->setTyre(new VirtualTyre(thickness, grip, pricing, description, weight, 22));
+    simCar->setTyres(new virtualTyre(thickness, grip, pricing, description, weight, 22));
 }
-ChassisDepartment::~ChassisDepartment(){}
+TyreDepartment::~TyreDepartment(){}
 
-Tyre* ChassisDepartment::develop()
+Tyre* TyreDepartment::develop()
 {
     research();
     test();
     analyze();
     delete simCar;
-    return chassis;
+    return tyre;
 }
 
-void ChassisDepartment::research()
+void TyreDepartment::research()
 {
     cout << "Research has been conducted and the tyres are made of amazing material with good grip." << endl;
 }
 
-void ChassisDepartment::test()
+void TyreDepartment::test()
 {
     cout << "The tyres are being sent for testing..." << endl << endl;
     simCar->testAero();
 }
 
-void ChassisDepartment::analyze()
+void TyreDepartment::analyze()
 {
     cout << "The tyresd have been analyzed and they have good grip!" << endl;
 }

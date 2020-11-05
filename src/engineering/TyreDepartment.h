@@ -2,7 +2,7 @@
 #define __TYREDEPARTMENT_H__
 
 #include "EngineeringDepartment.h"
-#include "Tyre.h"
+#include "../core/Tyre.h"
 
 class TyreDepartment : public EngineeringDepartment
 {

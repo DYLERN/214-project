@@ -1,8 +1,8 @@
 #ifndef __ENGINEERINGDEPARTMENT_H__
 #define __ENGINEERINGDEPARTMENT_H__
 
-#include "SimulatedCar.h"
-#include "RacingCarPart.h"
+#include "../testing/SimulatedCar.h"
+#include "../core/RacingCarPart.h"
 
 class EngineeringDepartment
 {

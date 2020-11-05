@@ -2,7 +2,7 @@
 #define CURRENTCARCONSTRUCTOR_H
 
 #include "RacingCarConstructor.h"
-#include "FormulaOneCar.h"
+#include "../core/FormulaOneCar.h"
 
 class CurrentCarConstructor : public RacingCarConstructor
 {

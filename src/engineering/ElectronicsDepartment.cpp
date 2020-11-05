@@ -1,39 +1,39 @@
 #include "ElectronicsDepartment.h"
-#include "VirtualElectronics.h"
+#include "../testing/virtualElectronics.h"
 #include <iostream>
 
 using namespace std;
 
-AerodynamicsDepartment::AerodynamicsDepartment(std::string type, std::string material, float pricing, std::string description, float weight, float volt, float amp, float power) : EngineeringDepartment()
+ElectronicsDepartment::ElectronicsDepartment(std::string type, std::string material, float pricing, std::string description, float weight, float volt, float amp, float power) : EngineeringDepartment()
 {
     this->electronics = new Electronics(type, material, pricing, description, weight, volt, amp, power);
     this->simCar = new SimulatedCar();
     
-    simCar->setElectronics(new VirtualElectronics(power, pricing, description, weight, 20));
+    simCar->setElectronics(new virtualElectronics(power, pricing, description, weight, 20.0f));
 }
-ChassisDepartment::~ChassisDepartment(){}
+ElectronicsDepartment::~ElectronicsDepartment(){}
 
-Electronics* ChassisDepartment::develop()
+Electronics* ElectronicsDepartment::develop()
 {
     research();
     test();
     analyze();
     delete simCar;
-    return chassis;
+    return electronics;
 }
 
-void ChassisDepartment::research()
+void ElectronicsDepartment::research()
 {
     cout << "Research has been conducted and the electronics seem to be capable with the included power draw." << endl;
 }
 
-void ChassisDepartment::test()
+void ElectronicsDepartment::test()
 {
     cout << "The electonic system is being sent for testing..." << endl << endl;
     simCar->testAero();
 }
 
-void ChassisDepartment::analyze()
+void ElectronicsDepartment::analyze()
 {
     cout << "The electronics have been analyzed and the voltage and power is withing a good margin!" << endl;
 }
