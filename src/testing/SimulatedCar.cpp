@@ -9,6 +9,15 @@ SimulatedCar::SimulatedCar(){
     aero = NULL;
 
 }
+SimulatedCar::~SimulatedCar(){
+
+    delete chassis;
+    delete tyres;
+    delete engine;
+    delete aero;
+    delete electronics;
+
+}
 
 void SimulatedCar::setChassis(virtualChassis* chass){
 
@@ -128,7 +137,7 @@ void SimulatedCar::testChassis(){
 
     if(chassis != NULL){
 
-        if(chassis->getCollisionRating() < 50){
+        if(chassis->getCollisionRating() > 50){
 
             result += "Chassis Testing has completed:\nChassis survived the collison test and is approved for use.\n\n";
 
