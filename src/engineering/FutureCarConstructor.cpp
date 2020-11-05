@@ -1,7 +1,10 @@
 #include "FutureCarConstructor.h"
 #include "NavigationalAI.h"
 
-FutureCarConstructor::FutureCarConstructor() : RacingCarConstructor(){}
+FutureCarConstructor::FutureCarConstructor() : RacingCarConstructor()
+{
+    car = new FutureRacingCar();
+}
 FutureCarConstructor::~FutureCarConstructor(){}
 
 void FutureCarConstructor::addAerodynamics()

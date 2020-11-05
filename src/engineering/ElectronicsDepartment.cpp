@@ -11,14 +11,17 @@ ElectronicsDepartment::ElectronicsDepartment(std::string type, std::string mater
     
     simCar->setElectronics(new virtualElectronics(power, pricing, description, weight, 20.0f));
 }
-ElectronicsDepartment::~ElectronicsDepartment(){}
+ElectronicsDepartment::~ElectronicsDepartment()
+{
+    if(simCar != nullptr)
+        delete simCar;
+}
 
 Electronics* ElectronicsDepartment::develop()
 {
     research();
     test();
     analyze();
-    delete simCar;
     return electronics;
 }
 
@@ -30,10 +33,10 @@ void ElectronicsDepartment::research()
 void ElectronicsDepartment::test()
 {
     cout << "The electonic system is being sent for testing..." << endl << endl;
-    simCar->testAero();
+    simCar->testElectronics();
 }
 
 void ElectronicsDepartment::analyze()
 {
-    cout << "The electronics have been analyzed and the voltage and power is withing a good margin!" << endl;
+    cout << "The electronics have been analyzed and the voltage and power is withing a good margin!" << endl << endl;
 }

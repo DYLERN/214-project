@@ -11,14 +11,17 @@ EngineDepartment::EngineDepartment(std::string type, std::string material, float
     
     simCar->setEngine(new virtualEngine(horsePower, pricing, description, weight, 100.0f));
 }
-EngineDepartment::~EngineDepartment(){}
+EngineDepartment::~EngineDepartment()
+{
+    if(simCar != nullptr)
+        delete simCar;
+}
 
 Engine* EngineDepartment::develop()
 {
     research();
     test();
     analyze();
-    delete simCar;
     return engine;
 }
 
@@ -30,10 +33,10 @@ void EngineDepartment::research()
 void EngineDepartment::test()
 {
     cout << "Engine is being sent for testing..." << endl << endl;
-    simCar->testChassis();
+    simCar->testEngine();
 }
 
 void EngineDepartment::analyze()
 {
-    cout << "The engine's horsepower is fenominal!" << endl;
+    cout << "The engine's horsepower is fenominal!" << endl << endl;
 }

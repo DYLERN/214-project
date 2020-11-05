@@ -1,6 +1,9 @@
 #include "CurrentCarConstructor.h"
 
-CurrentCarConstructor::CurrentCarConstructor() : RacingCarConstructor(){}
+CurrentCarConstructor::CurrentCarConstructor() : RacingCarConstructor()
+{
+    car = new FormulaOneCar();
+}
 CurrentCarConstructor::~CurrentCarConstructor(){}
 
 void CurrentCarConstructor::addAerodynamics()

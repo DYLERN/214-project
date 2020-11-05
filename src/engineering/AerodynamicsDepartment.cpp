@@ -11,14 +11,17 @@ AerodynamicsDepartment::AerodynamicsDepartment(std::string type, std::string mat
     
     simCar->setAero(new virtualAerodynamics(rating, pricing, description, weight, 14.0f));
 }
-AerodynamicsDepartment::~AerodynamicsDepartment(){}
+AerodynamicsDepartment::~AerodynamicsDepartment()
+{
+    if(simCar != nullptr)
+        delete simCar;
+}
 
 Aerodynamics* AerodynamicsDepartment::develop()
 {
     research();
     test();
     analyze();
-    delete simCar;
     return aerodynamics;
 }
 
@@ -35,5 +38,5 @@ void AerodynamicsDepartment::test()
 
 void AerodynamicsDepartment::analyze()
 {
-    cout << "The aerodynamics are out of this world and will provide a competitive advantage!" << endl;
+    cout << "The aerodynamics are out of this world and will provide a competitive advantage!" << endl << endl;
 }

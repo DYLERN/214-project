@@ -9,16 +9,19 @@ ChassisDepartment::ChassisDepartment(std::string type, std::string material, flo
     this->chassis = new Chassis(type, material, pricing, description, weight, collision);
     this->simCar = new SimulatedCar();
     
-    simCar->setChassis(new virtualChassis(collision, pricing, description, weight, 10.0f));
+    simCar->setChassis(new virtualChassis(collision, pricing, description, weight, 75.0f));
 }
-ChassisDepartment::~ChassisDepartment(){}
+ChassisDepartment::~ChassisDepartment()
+{
+    if(simCar != nullptr)
+        delete simCar;
+}
 
 Chassis* ChassisDepartment::develop()
 {
     research();
     test();
     analyze();
-    delete simCar;
     return chassis;
 }
 
@@ -35,5 +38,5 @@ void ChassisDepartment::test()
 
 void ChassisDepartment::analyze()
 {
-    cout << "The Chassis has been analyzed and is clear for racing!" << endl;
+    cout << "The Chassis has been analyzed and is clear for racing!" << endl << endl;
 }

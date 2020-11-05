@@ -11,14 +11,17 @@ TyreDepartment::TyreDepartment(std::string type, std::string material, float pri
     
     simCar->setTyres(new virtualTyre(thickness, grip, pricing, description, weight, 22));
 }
-TyreDepartment::~TyreDepartment(){}
+TyreDepartment::~TyreDepartment()
+{
+    if(simCar != nullptr)
+        delete simCar;
+}
 
 Tyre* TyreDepartment::develop()
 {
     research();
     test();
     analyze();
-    delete simCar;
     return tyre;
 }
 
@@ -30,10 +33,10 @@ void TyreDepartment::research()
 void TyreDepartment::test()
 {
     cout << "The tyres are being sent for testing..." << endl << endl;
-    simCar->testAero();
+    simCar->testTyre();
 }
 
 void TyreDepartment::analyze()
 {
-    cout << "The tyresd have been analyzed and they have good grip!" << endl;
+    cout << "The tyres have been analyzed and they have good grip!" << endl << endl;
 }
