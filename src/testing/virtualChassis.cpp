@@ -1,6 +1,6 @@
 #include "virtualChassis.h"
 
-virtualChassis::virtualChassis(float collisionRating, float pricing, string description, float weight, float safety){
+virtualChassis::virtualChassis(float collisionRating, float pricing, std::string description, float weight, float safety){
 
     this->collisionRating = collisionRating;
     this->pricing = pricing;

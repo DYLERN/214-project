@@ -10,7 +10,7 @@ float thickness;
 float grip;
 
 public:
-virtualTyre(float, float, float, string, float, float);
+virtualTyre(float, float, float, std::string, float, float);
 float getThickness();
 float getGrip();
 

@@ -55,7 +55,7 @@ void SimulatedCar::setWeather(weather w){
 
 void SimulatedCar::testCar(float maxPrice, float maxWeight){
 
-    string result = "";
+    std::string result = "";
 
     if(chassis != NULL && tyres != NULL && engine != NULL && aero != NULL && electronics != NULL){
 
@@ -90,22 +90,22 @@ void SimulatedCar::testCar(float maxPrice, float maxWeight){
         int temp = rand() % 100 + 2600;
         int speed = rand() % 70 + 300;
 
-        result += "Lap Completed in: " + to_string(time) + " seconds.\nMax engine temperature: " + to_string(temp) + "\nTop speed: " + to_string(speed) + 
+        result += "Lap Completed in: " + std::to_string(time) + " seconds.\nMax engine temperature: " + std::to_string(temp) + "\nTop speed: " + std::to_string(speed) + 
         "\nCar safety check: Success\nFinal decision: Formula One Car is good to go.\n";
 
     }else{
 
-        cout << "Not every part of the simulated racecar has been created and so a full test is not possible." << endl;
+        std::cout << "Not every part of the simulated racecar has been created and so a full test is not possible." << std::endl;
 
     }
 
-    cout << result << endl;
+    std::cout << result << std::endl;
 
 }
 
 void SimulatedCar::testChassis(){
 
-    string result = "";
+    std::string result = "";
 
     if(chassis != NULL){
 
@@ -120,7 +120,7 @@ void SimulatedCar::testChassis(){
         }
 
         result += "Specifications of chassis:\nDescription: " + 
-            chassis->getDescription() + "\nWeight: " + to_string(chassis->getWeight()) + "\nPricing: " + to_string(chassis->getPricing()) + "\n";
+            chassis->getDescription() + "\nWeight: " + std::to_string(chassis->getWeight()) + "\nPricing: " + std::to_string(chassis->getPricing()) + "\n";
 
     }else{
 
@@ -128,14 +128,14 @@ void SimulatedCar::testChassis(){
 
     }
 
-    cout << result << endl;
+    std::cout << result << std::endl;
     
 
 }
 
 void SimulatedCar::testTyre(){
 
-    string result = "";
+    std::string result = "";
 
     if(tyres != NULL){
 
@@ -146,6 +146,10 @@ void SimulatedCar::testTyre(){
         }else if(tyres->getGrip() == 2){
 
             result += "Grip Testing has completed:\nHard grip tyres worked well for dry conditions and are approved for use.\n";
+
+        }else{
+
+            result += "Grip Testing has completed:\nGrip for tyres worked well for dry conditions and are approved for use.\n";
 
         }
 
@@ -160,7 +164,7 @@ void SimulatedCar::testTyre(){
         }
 
         result += "Specifications of Tyres:\nDescription: " + 
-            tyres->getDescription() + "\nWeight: " + to_string(tyres->getWeight()) + "\nPricing: " + to_string(tyres->getPricing()) + "\n";
+            tyres->getDescription() + "\nWeight: " + std::to_string(tyres->getWeight()) + "\nPricing: " + std::to_string(tyres->getPricing()) + "\n";
 
     }else{
 
@@ -168,13 +172,13 @@ void SimulatedCar::testTyre(){
 
     }
 
-    cout << result << endl;
+    std::cout << result << std::endl;
 
 }
 
 void SimulatedCar::testEngine(){
 
-    string result = "";
+    std::string result = "";
 
     if(engine != NULL){
 
@@ -189,7 +193,7 @@ void SimulatedCar::testEngine(){
         }
 
         result += "Specifications of Engine:\nDescription: " + 
-            engine->getDescription() + "\nWeight: " + to_string(engine->getWeight()) + "\nPricing: " + to_string(engine->getPricing()) + "\n";
+            engine->getDescription() + "\nWeight: " + std::to_string(engine->getWeight()) + "\nPricing: " + std::to_string(engine->getPricing()) + "\n";
 
     }else{
 
@@ -197,13 +201,13 @@ void SimulatedCar::testEngine(){
 
     }
 
-    cout << result << endl;
+    std::cout << result << std::endl;
 
 }
 
 void SimulatedCar::testAero(){
 
-    string result = "";
+    std::string result = "";
 
     if(aero != NULL){
 
@@ -218,7 +222,7 @@ void SimulatedCar::testAero(){
         }
 
         result += "Specifications of Aerodynamics:\nDescription: " + 
-            aero->getDescription() + "\nWeight: " + to_string(aero->getWeight()) + "\nPricing: " + to_string(aero->getPricing()) + "\n";
+            aero->getDescription() + "\nWeight: " + std::to_string(aero->getWeight()) + "\nPricing: " + std::to_string(aero->getPricing()) + "\n";
 
     }else{
 
@@ -226,13 +230,13 @@ void SimulatedCar::testAero(){
 
     }
 
-    cout << result << endl;
+    std::cout << result << std::endl;
 
 }
 
 void SimulatedCar::testElectronics(){
 
-    string result = "";
+    std::string result = "";
 
     if(electronics != NULL){
 
@@ -247,7 +251,7 @@ void SimulatedCar::testElectronics(){
         }
 
         result += "Specifications of Aerodynamics:\nDescription: " + 
-            electronics->getDescription() + "\nWeight: " + to_string(electronics->getWeight()) + "\nPricing: " + to_string(electronics->getPricing()) + "\n";
+            electronics->getDescription() + "\nWeight: " + std::to_string(electronics->getWeight()) + "\nPricing: " + std::to_string(electronics->getPricing()) + "\n";
 
     }else{
 
@@ -255,7 +259,7 @@ void SimulatedCar::testElectronics(){
 
     }
 
-    cout << result << endl;
+    std::cout << result << std::endl;
 
 }
 
