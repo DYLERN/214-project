@@ -11,11 +11,35 @@ SimulatedCar::SimulatedCar(){
 }
 SimulatedCar::~SimulatedCar(){
 
-    delete chassis;
-    delete tyres;
-    delete engine;
-    delete aero;
-    delete electronics;
+    if(chassis != NULL){
+
+        delete chassis;
+
+    }
+
+    if(tyres != NULL){
+
+        delete tyres;
+
+    }
+
+    if(engine != NULL){
+
+        delete engine;
+
+    }
+
+    if(aero != NULL){
+
+        delete aero;
+
+    }
+
+    if(electronics != NULL){
+
+        delete electronics;
+
+    }
 
 }
 
