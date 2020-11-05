@@ -1,9 +1,16 @@
-#ifndef __CHASSIS_H__
-#define __CHASSIS_H__
+#ifndef CHASSIS_H
+#define CHASSIS_H
 
-class Chassis {
-public:
-    Chassis() {}
+#include "RacingCarPart.h"
+
+class Chassis : public RacingCarPart
+{
+    private:
+        float collisionRating;
+
+    public:
+        Chassis(std::string, std::string, float, std::string, float, float);
+        ~Chassis();
 };
 
-#endif // __CHASSIS_H__
+#endif

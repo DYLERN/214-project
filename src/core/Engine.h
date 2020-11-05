@@ -1,9 +1,16 @@
-#ifndef __ENGINE_H__
-#define __ENGINE_H__
+#ifndef ENGINE_H
+#define ENGINE_H
 
-class Engine {
-public:
-    Engine() {}
+#include "RacingCarPart.h"
+
+class Engine : public RacingCarPart
+{
+    private:
+        float horsePower;
+
+    public:
+        Engine(std::string, std::string, float, std::string, float, float);
+        ~Engine();
 };
 
-#endif // __ENGINE_H__
+#endif

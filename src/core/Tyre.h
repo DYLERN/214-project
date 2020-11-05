@@ -1,21 +1,17 @@
-#ifndef __TYRE_H__
-#define __TYRE_H__
+#ifndef TYRE_H
+#define TYRE_H
 
-class Tyre {
-public:
-    Tyre() {}
+#include "RacingCarPart.h"
+
+class Tyre : public RacingCarPart
+{
+    private:
+        float thickness;
+        float grip;
+
+    public:
+        Tyre(std::string, std::string, float, std::string, float, float, float);
+        ~Tyre();
 };
 
-class SoftTyre : public Tyre {
-
-};
-
-class MediumTyre : public Tyre {
-
-};
-
-class HardTyre : public Tyre {
-
-};
-
-#endif // __TYRE_H__
+#endif
