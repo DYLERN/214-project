@@ -10,24 +10,17 @@
 #include "testing/virtualParts.h"
 #include "testing/virtualTyre.h"
 
-#include <iostream>
+#include <random>
 
-using namespace std;
+#include "core/FormulaOneCar.h"
+#include "logistics/InventoryItem.h"
+#include "logistics/Container.h"
+#include "logistics/LogisticsManager.h"
+#include "engineering/CurrentCarConstructor.h"
+#include "engineering/Engineer.h"
 
 int main() {
 
-    int numCars = 4;
-
-    RacingCarConstructor* bluePrints[numCars];
-    Engineer* engineers[numCars];
-    FormulaOneCar* cars[numCars];
-
-    for(int i = 0; i < numCars; i++)
-    {
-        bluePrints[i] = new CurrentCarConstructor();
-        engineers[i] = new Engineer(bluePrints[i]);
-        cars[i] = engineers[i]->constructCar();
-    }
 
     SimulatedCar* car = new SimulatedCar();
     car->setAero(new virtualAerodynamics(1,1,"aero",1,1));
@@ -37,16 +30,6 @@ int main() {
     car->setTyres(new virtualTyre(1,1,1,"tyre",1,1));
 
     car->testCar(10,10,"rainy");
-
-    
-
-
-    for(int i = 0; i < numCars; i++)
-    {
-        delete cars[i];
-        delete engineers[i];
-        delete bluePrints[i];
-    }
 
 
 

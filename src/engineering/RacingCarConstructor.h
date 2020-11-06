@@ -19,7 +19,7 @@ class RacingCarConstructor
 
     public:
         RacingCarConstructor();
-        ~RacingCarConstructor();
+        virtual ~RacingCarConstructor();
         virtual void addAerodynamics() = 0;
         virtual void addChassis() = 0;
         virtual void addTyres() = 0;
