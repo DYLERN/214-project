@@ -6,17 +6,19 @@
 #include "logistics/InventoryItem.h"
 #include "logistics/Container.h"
 #include "logistics/LogisticsManager.h"
+#include "engineering/CurrentCarConstructor.h"
+#include "engineering/Engineer.h"
 
 int main() {
     std::srand(std::time(0));
     auto plane = std::make_shared<Plane>("ADZ-903");
     std::vector<std::shared_ptr<Truck> > trucks = {std::make_shared<Truck>("BG 64 UI"), std::make_shared<Truck>("WD 31 PD")};
 
-    Engine* engine = new Engine();
-    Chassis* chassis = new Chassis();
-    std::array<Tyre*, 4> tyres = {new HardTyre, new HardTyre, new HardTyre, new HardTyre};
+    CurrentCarConstructor constructor;
+    Engineer engineer(&constructor);
 
-    auto car = std::make_shared<FormulaOneCar>(engine, chassis, tyres);
+    auto car = std::shared_ptr<FormulaOneCar>(engineer.constructCar());
+
     std::shared_ptr<InventoryItem> drill = std::make_shared<Equipment>("Drill", 10000, 5);
     std::shared_ptr<InventoryItem> wrench = std::make_shared<Equipment>("Wrench", 10000, 6);
     std::shared_ptr<InventoryItem> jack = std::make_shared<Equipment>("Jack", 5000, 10);

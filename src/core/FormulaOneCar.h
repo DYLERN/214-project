@@ -1,36 +1,34 @@
-#ifndef __FORMULAONECAR_H__
-#define __FORMULAONECAR_H__
+#ifndef FORMULAONECAR_H
+#define FORMULAONECAR_H
 
-#include <memory>
-#include <array>
-#include <algorithm>
-
-#include "Engine.h"
 #include "Chassis.h"
+#include "Aerodynamics.h"
+#include "Engine.h"
+#include "Electronics.h"
 #include "Tyre.h"
 
-/**
- * @author Dylan Pfab
- * @version 1.0
- */
-class FormulaOneCar {
-private:
-    std::shared_ptr<Engine> engine;
-    std::shared_ptr<Chassis> chassis;
-    std::array<std::shared_ptr<Tyre>, 4> tyres;
+class FormulaOneCar
+{
+    protected:
+        Chassis* chassis;
+        Aerodynamics* aerodynamics;
+        Engine* engine;
+        Electronics* electronics;
+        Tyre* tyres;
 
-public:
-    FormulaOneCar(Engine*, Chassis*, std::array<Tyre*, 4>);
-
-    std::shared_ptr<Engine> getEngine();
-    void setEngine(Engine*);
-
-    std::shared_ptr<Chassis> getChassis();
-    void setChassis(Chassis*);
-
-    std::array<std::shared_ptr<Tyre>, 4> getTyres();
-    std::shared_ptr<Tyre> getTyre(int);
-    void setTyre(int, Tyre*);
+    public:
+        FormulaOneCar();
+        ~FormulaOneCar();
+        Chassis* getChassis();
+        void setChassis(Chassis*);
+        Aerodynamics* getAerodynamics();
+        void setAerodynamics(Aerodynamics*);
+        Engine* getEngine();
+        void setEngine(Engine*);
+        Electronics* getElectronics();
+        void setElectronics(Electronics*);
+        Tyre* getTyres();
+        void setTyres(Tyre*);
 };
 
-#endif // __FORMULAONECAR_H__
+#endif

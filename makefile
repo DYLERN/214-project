@@ -8,7 +8,7 @@ run:
 	./build/main.out
 
 debug:
-	lldb build/main.out
+	gdb build/main.out
 
 check:
 	valgrind ./build/main.out

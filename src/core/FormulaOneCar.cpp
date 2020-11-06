@@ -1,27 +1,65 @@
 #include "FormulaOneCar.h"
 
-FormulaOneCar::FormulaOneCar(Engine *engine, Chassis *chassis, std::array<Tyre *, 4> tyres): 
-    engine(engine),
-    chassis(chassis),
-    tyres({
-        std::shared_ptr<Tyre>(tyres[0]),
-        std::shared_ptr<Tyre>(tyres[1]),
-        std::shared_ptr<Tyre>(tyres[2]),
-        std::shared_ptr<Tyre>(tyres[3])
-    })
+FormulaOneCar::FormulaOneCar()
 {
+
 }
 
-std::shared_ptr<Engine> FormulaOneCar::getEngine() { return engine; }
+FormulaOneCar::~FormulaOneCar()
+{
+    delete chassis;
+    delete engine;
+    delete electronics;
+    delete aerodynamics;
+    delete tyres;
+}
 
-void FormulaOneCar::setEngine(Engine* engine) { this->engine = std::shared_ptr<Engine>(engine); }
+Chassis* FormulaOneCar::getChassis()
+{
+    return chassis;
+}
 
-std::shared_ptr<Chassis> FormulaOneCar::getChassis() { return chassis; }
+void FormulaOneCar::setChassis(Chassis* c)
+{
+    this->chassis = c;
+}
 
-void FormulaOneCar::setChassis(Chassis* chassis) { this->chassis = std::shared_ptr<Chassis>(chassis); }
+Engine* FormulaOneCar::getEngine()
+{
+    return engine;
+}
 
-std::array<std::shared_ptr<Tyre>, 4> FormulaOneCar::getTyres() { return tyres; }
+void FormulaOneCar::setEngine(Engine* e)
+{
+    this->engine = e;
+}
 
-std::shared_ptr<Tyre> FormulaOneCar::getTyre(int index) { return tyres.at(index); }
+Electronics* FormulaOneCar::getElectronics()
+{
+    return electronics;
+}
 
-void FormulaOneCar::setTyre(int index, Tyre* tyre) { tyres[index] = std::shared_ptr<Tyre>(tyre); }
+void FormulaOneCar::setElectronics(Electronics* e)
+{
+    this->electronics = e;
+}
+
+Aerodynamics* FormulaOneCar::getAerodynamics()
+{
+    return aerodynamics;
+}
+
+void FormulaOneCar::setAerodynamics(Aerodynamics* a)
+{
+    this->aerodynamics = a;
+}
+
+Tyre* FormulaOneCar::getTyres()
+{
+    return tyres;
+}
+
+void FormulaOneCar::setTyres(Tyre* t)
+{
+    this->tyres = t;
+}
