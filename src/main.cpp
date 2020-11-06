@@ -18,20 +18,37 @@
 #include "logistics/LogisticsManager.h"
 #include "engineering/CurrentCarConstructor.h"
 #include "engineering/Engineer.h"
+#include "testing/windTunnelTest.h"
 
 int main() {
 
+        int numCars = 4;
 
-    SimulatedCar* car = new SimulatedCar();
-    car->setAero(new virtualAerodynamics(1,1,"aero",1,1));
-    car->setChassis(new virtualChassis(1,1,"chassis",1,1));
-    car->setElectronics(new virtualElectronics(1,1,"electronics",1,1));
-    car->setEngine(new virtualEngine(1,1,"engine",1,1));
-    car->setTyres(new virtualTyre(1,1,1,"tyre",1,1));
+    RacingCarConstructor* bluePrints[numCars];
+    Engineer* engineers[numCars];
+    FormulaOneCar* cars[numCars];
 
-    car->testCar(10,10,"rainy");
+    for(int i = 0; i < numCars; i++)
+    {
+        bluePrints[i] = new CurrentCarConstructor();
+        engineers[i] = new Engineer(bluePrints[i]);
+        cars[i] = engineers[i]->constructCar();
+    }
+
+    windTunnelTest* test = new windTunnelTest(cars[0]);
+
+    test->testAcceleration();
+    test->testBreaking();
+
+    delete test;
 
 
+    for(int i = 0; i < numCars; i++)
+    {
+        delete cars[i];
+        delete engineers[i];
+        delete bluePrints[i];
+    }
 
     return 0;
 }

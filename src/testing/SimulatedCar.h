@@ -2,16 +2,19 @@
 #define __SIMULATEDCAR_H__
 
 #include <string>
+#include "reportCareTaker.h"
 #include "virtualTyre.h"
 #include "virtualChassis.h"
 #include "virtualEngine.h"
 #include "virtualAerodynamics.h"
 #include "virtualElectronics.h"
+#include "report.h"
 
 
 class SimulatedCar{
 
 private:
+reportCareTaker* careTaker;
 virtualChassis* chassis;
 virtualTyre* tyres;
 virtualEngine* engine;
@@ -28,7 +31,7 @@ void setAero(virtualAerodynamics*);
 void setElectronics(virtualElectronics*);
 void setElectronics();
 
-void testCar(float, float, std::string);
+report testCar(float, float, std::string);
 void testChassis();
 void testTyre();
 void testEngine();

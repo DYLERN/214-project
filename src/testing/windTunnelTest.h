@@ -1,7 +1,7 @@
 #ifndef __WINDTUNNELTEST_H__
 #define __WINDTUNNELTEST_H__
 
-#include "core/FormulaOneCar.h"
+#include "../core/FormulaOneCar.h"
 #include "startCar.h"
 #include "stopCar.h"
 #include "increaseThrottle.h"
@@ -9,6 +9,7 @@
 #include "decreaseThrottle.h"
 #include "gearUp.h"
 #include "gearDown.h"
+#include "report.h"
 
 class windTunnelTest{
 
@@ -26,8 +27,8 @@ gearDown* down = new gearDown();
 public:
 windTunnelTest(FormulaOneCar*);
 ~windTunnelTest();
-void testBreaking();
-void testAcceleration();
+report testBreaking();
+report testAcceleration();
 void setFormulaOneCar(FormulaOneCar*);
 
 };

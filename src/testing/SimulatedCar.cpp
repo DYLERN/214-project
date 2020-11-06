@@ -76,7 +76,7 @@ void SimulatedCar::setElectronics(virtualElectronics* elec){
 
 }
 
-void SimulatedCar::testCar(float maxPrice, float maxWeight, std::string weather){
+report SimulatedCar::testCar(float maxPrice, float maxWeight, std::string weather){
 
     std::string result = "";
 
@@ -125,6 +125,8 @@ void SimulatedCar::testCar(float maxPrice, float maxWeight, std::string weather)
     }
 
     std::cout << result << std::endl;
+
+    return report(result);
 
 }
 

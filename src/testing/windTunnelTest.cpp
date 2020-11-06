@@ -9,12 +9,6 @@ windTunnelTest::windTunnelTest(FormulaOneCar* car){
 
 windTunnelTest::~windTunnelTest(){
 
-    if(testCar != NULL){
-
-        delete testCar;
-
-    }
-
     if(start != NULL){
 
         delete start;
@@ -59,63 +53,95 @@ windTunnelTest::~windTunnelTest(){
 
 }
 
-void windTunnelTest::testBreaking(){
+report windTunnelTest::testBreaking(){
 
-    std::cout << "Testing car breaks, now going to get car to a suitable speed." << std::endl;
+    if(numTickets > 0){
 
-    start->execute();
+        std::cout << "Testing car breaks, now going to get car to a suitable speed." << std::endl;
 
-    increase->execute();
-    increase->execute();
-    up->execute();
-    increase->execute();
-    up->execute();
-    increase->execute();
+        start->execute();
 
-    int speed = rand() % 70 + 300;
+        increase->execute();
+        increase->execute();
+        up->execute();
+        increase->execute();
+        up->execute();
+        increase->execute();
 
-    std::cout << "Car is now at " + std::to_string(speed) + "Km/h, preparing to hard break." << std::endl;
+        int speed = rand() % 70 + 300;
 
-    decrease->execute();
-    decrease->execute();
-    down->execute();
-    decrease->execute();
-    down->execute();
-    decrease->execute();
+        std::cout << "Car is now at " + std::to_string(speed) + "Km/h, preparing to hard break." << std::endl;
 
-    stop->execute();
+        decrease->execute();
+        decrease->execute();
+        down->execute();
+        decrease->execute();
+        down->execute();
+        decrease->execute();
 
-    int time = rand() % 5 + 5;
+        stop->execute();
 
-    std::cout << "Time taken to brake: " + std::to_string(time) + " seconds from a speed of " + std::to_string(speed) + "Km/h." << std::endl; 
+        int time = rand() % 5 + 5;
 
-    numTickets--;
+        std::cout << "Time taken to brake: " + std::to_string(time) + " seconds from a speed of " + std::to_string(speed) + "Km/h." << std::endl << std::endl; 
+
+        numTickets--;
+
+        std::string result = "Formula one breaking report:\nComponents Tested:\nAeroDynamics: " + testCar->getAerodynamics()->getDescription() + "\nChassis: " + testCar->getChassis()->getDescription() +
+        "\nEngine: " + testCar->getEngine()->getDescription() + "\nElectronics: " + testCar->getElectronics()->getDescription() + "\nTyres: " + testCar->getTyres()->getDescription() +
+        "\n\nTime taken to brake: " + std::to_string(time) + " seconds from a speed of " + std::to_string(speed) + "Km/h.\nResult : Success";  
+
+        return report(result);
+
+    }else{
+
+        std::cout << "Cannot perform wind tunnel breaking test, no tickets remaining." << std::endl;
+
+        return report("Failed windTunnel Test, not enough tickets.");
+
+    }
 
 }
 
-void windTunnelTest::testAcceleration(){
+report windTunnelTest::testAcceleration(){
 
-    std::cout << "Testing car acceleration, now going to get car to top speed as quickly as possible." << std::endl;
+    if(numTickets > 0){
 
-    start->execute();
+        std::cout << "Testing car acceleration, now going to get car to top speed as quickly as possible." << std::endl;
 
-    acc->execute();
-    up->execute();
-    acc->execute();
+        start->execute();
 
-    int speed = rand() % 70 + 350;
-    int time = rand() % 5 + 10;
+        acc->execute();
+        up->execute();
+        acc->execute();
 
-    std::cout << "Car reached max speed of " + std::to_string(speed) + "Km/h, within " + std::to_string(time) + " seconds, bringing car to stop." << std::endl;
+        int speed = rand() % 70 + 350;
+        int time = rand() % 5 + 10;
 
-    decrease->execute();
-    decrease->execute();
-    down->execute();
-    decrease->execute();
+        std::cout << "Car reached max speed of " + std::to_string(speed) + "Km/h, within " + std::to_string(time) + " seconds, bringing car to stop." << std::endl;
 
-    stop->execute();
+        decrease->execute();
+        decrease->execute();
+        down->execute();
+        decrease->execute();
 
-    numTickets--;
+        stop->execute();
+
+        std::cout << std::endl;
+
+        numTickets--;
+
+        std::string result = "Formula one acceleration report:\nComponents Tested:\nAeroDynamics: " + testCar->getAerodynamics()->getDescription() + "\nChassis: " + testCar->getChassis()->getDescription() +
+        "\nEngine: " + testCar->getEngine()->getDescription() + "\nElectronics: " + testCar->getElectronics()->getDescription() + "\nTyres: " + testCar->getTyres()->getDescription() +
+        "\n\nCar reached max speed of " + std::to_string(speed) + "Km/h, within " + std::to_string(time) + " seconds.\nResult : Success";
+
+    }else{
+
+        std::cout << "Cannot perform wind tunnel acceleration test, no tickets remaining." << std::endl;
+
+        return report("Failed windTunnel Test, not enough tickets.");
+
+    }
 
 }
 
