@@ -6,6 +6,7 @@ SimulatedCar::SimulatedCar(){
     chassis = NULL;
     tyres = NULL;
     engine = NULL;
+    electronics = NULL;
     aero = NULL;
 
 }
