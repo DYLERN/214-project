@@ -1,8 +1,12 @@
 #include "FormulaOneCar.h"
 
-FormulaOneCar::FormulaOneCar()
-{
+using namespace std;
 
+FormulaOneCar::FormulaOneCar(string name, string team, string model)
+{
+    this->driverName = name;
+    this->team = team;
+    this->carModel = model;
 }
 
 FormulaOneCar::~FormulaOneCar()
