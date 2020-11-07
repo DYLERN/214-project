@@ -6,6 +6,7 @@
 #include "Engine.h"
 #include "Electronics.h"
 #include "Tyre.h"
+#include <string>
 
 class FormulaOneCar
 {
