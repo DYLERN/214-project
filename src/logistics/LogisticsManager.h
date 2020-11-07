@@ -9,6 +9,10 @@
 #include "TransportStrategy.h"
 #include "Destination.h"
 
+/**
+ * Logistics Manager class. Has a reference to the fleet, and a transport strategy.
+ * @author Dylan Pfab
+ */
 class LogisticsManager
 {
 private:
@@ -27,8 +31,12 @@ public:
     void addCar(std::shared_ptr<FormulaOneCar> car);
     void addInventoryItem(std::shared_ptr<InventoryItem> inventoryItem);
 
+    /**
+     * Dispatches the fleet to the race location.
+     */
     void dispatch();
-
+    
+private:
     void joinAll();
 };
 

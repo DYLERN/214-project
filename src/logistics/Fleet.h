@@ -5,6 +5,11 @@
 
 #include "TransportVehicle.h"
 
+/**
+ * The Formula One Team's fleet.
+ * Has references to the trucks and plane.
+ * @author Dylan Pfab
+ */
 class Fleet
 {
 private:

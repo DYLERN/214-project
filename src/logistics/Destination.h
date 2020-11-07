@@ -9,6 +9,10 @@ enum DestinationType
     INTERNATIONAL
 };
 
+/**
+ * Wrapper for a destination. Includes the destination name, and the type (European/International)
+ * @author Dylan Pfab
+ */
 struct Destination
 {
     std::string name;

@@ -31,7 +31,7 @@ int main() {
     manager.addInventoryItem(jack);
     manager.dispatch();
 
-    manager.joinAll();
+    // manager.joinAll();
     
     return 0;
 }

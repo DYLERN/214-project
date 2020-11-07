@@ -81,6 +81,7 @@ void LogisticsManager::addInventoryItem(std::shared_ptr<InventoryItem> item)
 void LogisticsManager::dispatch()
 {
     transportStrategy->transport(fleet);
+    this->joinAll();
 }
 
 void LogisticsManager::joinAll()
