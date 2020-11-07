@@ -1,28 +1,19 @@
 #pragma once
-#include "RaceState.h"
-#include "RaceTeam.h"
-#include <string>
-#include <vector>
-#include <iostream>
+#include "../pch.h"
 #include "../core/FormulaOneCar.h"
 #include "results.h"
-using namespace std;
 class Race{
 private:
     FormulaOneCar* carList[10];
     int times[10];
-    RaceState* state;
-    //RaceTeam* observerList;
-    string raceName;
+    std::string location;
+    std::string raceName;
     void sort();
 public:
-    Race();
+    Race(FormulaOneCar**, std::string, std::string);
     ~Race();
-    results commenceRace();
-    void changeToQualify();//decrease
-    void changeToRacing();//increase
+    std::array<std::shared_ptr<results>,10> commenceRace();
+    void update();
     void testTimes();
-    //string getDay();
-    void setState(RaceState* state);
-    void setTournamentName(string raceName);
+    void practice();
 };

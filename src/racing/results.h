@@ -2,10 +2,16 @@
 #include "Race.h"
 class results{
   private:
-    Race* holder;
-    Race arr[];
-    results arry[];
-    results* holderr;
+  std::string raceName;
+  std::string driverName;
+  std::string team;
+  std::string location;
+  std::string carModel;
+  int positionInGrid;
+  int finalPlace;
+  float timeTaken;
   public:
-  void print();  
+  results(std::string,std::string,std::string,std::string,std::string,int,int,float);
+  void print();
+  int getPlace();
 };
