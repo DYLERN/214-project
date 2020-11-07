@@ -22,7 +22,7 @@ class FormulaOneCar
         std::string team;
         std::string carModel;
         int points = 0;
-        FormulaOneCar(std::string, std::string, std::string);
+        FormulaOneCar();
         ~FormulaOneCar();
         Chassis* getChassis();
         void setChassis(Chassis*);

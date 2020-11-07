@@ -2,11 +2,9 @@
 
 using namespace std;
 
-FormulaOneCar::FormulaOneCar(string name, string team, string model)
+FormulaOneCar::FormulaOneCar()
 {
-    this->driverName = name;
-    this->team = team;
-    this->carModel = model;
+
 }
 
 FormulaOneCar::~FormulaOneCar()
