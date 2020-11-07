@@ -24,7 +24,7 @@
 
 int main() {
 
-    int numCars = 10;
+    const int numCars = 10;
 
     RacingCarConstructor* bluePrints[numCars];
     Engineer* engineers[numCars];
