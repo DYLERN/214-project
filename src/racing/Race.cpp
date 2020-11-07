@@ -24,8 +24,11 @@ void Race::testTimes()
     {
         int time = rand() % 200 + 300;
         times[i] = times[i] + time;
-        std::cout << "Car " + std::to_string(i) + " completed the lap in " + std::to_string(time) + " seconds" << std::endl;
+        std::cout << "Car " + std::to_string(i+1) + " completed the lap in " + std::to_string(time) + " seconds" << std::endl;
     }
+
+    std::cout << std::endl;
+
 }
 
 std::array<std::shared_ptr<results>,10> Race::commenceRace()
@@ -130,6 +133,7 @@ std::array<std::shared_ptr<results>,10> Race::commenceRace()
         scoring--;
         tempElec[maxPos] = 0;
     }
+    update();
     //engine
     float tempEngine[10];
     for (int i = 0; i < 10; i++)
@@ -157,6 +161,7 @@ std::array<std::shared_ptr<results>,10> Race::commenceRace()
         scoring = scoring - 2;
         tempEngine[maxPos] = 0;
     }
+    update();
     //tyres
     float tempTyres[10];
     for (int i = 0; i < 10; i++)
@@ -184,6 +189,7 @@ std::array<std::shared_ptr<results>,10> Race::commenceRace()
         scoring--;
         tempTyres[maxPos] = 0;
     }
+    update();
     //positions
     float placement[10];
     float holder[10];
@@ -220,34 +226,30 @@ std::array<std::shared_ptr<results>,10> Race::commenceRace()
 
     std::array<std::shared_ptr<results>,10> result;
 
+
+
+    for(int i = 0; i < 10; i++){
+
+
+
+        result[i] = std::shared_ptr<results>(new results(raceName, carList[i]->driverName, carList[i]->team, location, carList[i]->carModel, i+1, placement[i], 0));
+
+
+    }
+
+    std::cout << std::endl;
+
+    std::sort(result.begin(),result.end(),[](const std::shared_ptr<results>& a, const std::shared_ptr<results>& b) -> bool {return a->getPlace() < b->getPlace();});
+
     int timeTaken = rand() % 100 +500;
 
     for(int i = 0; i < 10; i++){
 
         int add = rand() % 10;
-
-        result[i] = std::shared_ptr<results>(new results(raceName, carList[i]->driverName, carList[i]->team, location, carList[i]->carModel, i+1, placement[i], (timeTaken + (i*add))));
+        result[i]->setTime(timeTaken);
+        timeTaken += add;
 
     }
-
-    // for (int i = 0; i < 10 - 1; i++)
-    // {
-    //     for (int j = 0; j < 10 - i - 1; j++)
-    //     {
-    //         if (result[j]->getPlace() > result[j+1]->getPlace())
-    //         {
-
-    //             results temp = *result[j];
-    //             result[j] = result[j + 1];
-    //             *result[j + 1] = temp;
-
-    //             result.swap()
-
-    //         }
-    //     }
-    // }
-
-    std::sort(result.begin(),result.end(),[](const std::shared_ptr<results>& a, const std::shared_ptr<results>& b) -> bool {return a->getPlace() < b->getPlace();});
 
     return result;
 
@@ -278,9 +280,8 @@ void Race::update(){
 
     for(int i = 0; i < 10; i++){
 
-        if(carList[i]->points > prevMax){
+        if(carList[i]->points > carList[topPos]->points){
 
-            prevMax = carList[i]->points;
             topPos = i;
 
         }

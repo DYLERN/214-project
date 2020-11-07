@@ -135,6 +135,8 @@ report windTunnelTest::testAcceleration(){
         "\nEngine: " + testCar->getEngine()->getDescription() + "\nElectronics: " + testCar->getElectronics()->getDescription() + "\nTyres: " + testCar->getTyres()->getDescription() +
         "\n\nCar reached max speed of " + std::to_string(speed) + "Km/h, within " + std::to_string(time) + " seconds.\nResult : Success";
 
+        return report(result);
+
     }else{
 
         std::cout << "Cannot perform wind tunnel acceleration test, no tickets remaining." << std::endl;

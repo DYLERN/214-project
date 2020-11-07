@@ -9,11 +9,11 @@ private:
     std::string location;
     std::string raceName;
     void sort();
+    void update();
 public:
     Race(FormulaOneCar**, std::string, std::string);
     ~Race();
     std::array<std::shared_ptr<results>,10> commenceRace();
-    void update();
     void testTimes();
     void practice();
 };

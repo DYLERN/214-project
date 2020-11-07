@@ -1,5 +1,5 @@
 #pragma once
-#include "Race.h"
+#include <iostream>
 class results{
   private:
   std::string raceName;
@@ -14,4 +14,5 @@ class results{
   results(std::string,std::string,std::string,std::string,std::string,int,int,float);
   void print();
   int getPlace();
+  void setTime(int);
 };
