@@ -8,7 +8,6 @@ private:
     int times[10];
     std::string location;
     std::string raceName;
-    void sort();
     void update();
 public:
     Race(FormulaOneCar**, std::string, std::string);
