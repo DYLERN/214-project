@@ -12,6 +12,7 @@ class Aerodynamics : public RacingCarPart
     public:
         Aerodynamics(std::string, std::string, float, std::string, float, float, float);
         ~Aerodynamics();
+        float getRating();
 };
 
 #endif

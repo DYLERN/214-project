@@ -11,6 +11,7 @@ class Chassis : public RacingCarPart
     public:
         Chassis(std::string, std::string, float, std::string, float, float);
         ~Chassis();
+        float getRating();
 };
 
 #endif

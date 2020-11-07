@@ -17,6 +17,10 @@ class FormulaOneCar
         Tyre* tyres;
 
     public:
+        std::string driverName;
+        std::string team;
+        std::string carModel;
+        int points = 0;
         FormulaOneCar();
         ~FormulaOneCar();
         Chassis* getChassis();

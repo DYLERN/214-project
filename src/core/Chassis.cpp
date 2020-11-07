@@ -10,3 +10,9 @@ Chassis::~Chassis()
 {
     
 }
+
+float Chassis::getRating(){
+
+    return collisionRating;
+
+}
