@@ -11,6 +11,7 @@ class Engine : public RacingCarPart
     public:
         Engine(std::string, std::string, float, std::string, float, float);
         ~Engine();
+        float getRating();
 };
 
 #endif

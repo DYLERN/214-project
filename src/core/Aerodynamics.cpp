@@ -8,3 +8,9 @@ Aerodynamics::Aerodynamics(std::string type, std::string mat, float price, std::
 }
 
 Aerodynamics::~Aerodynamics(){}
+
+float Aerodynamics::getRating(){
+
+    return aerodynamicRating;
+
+}

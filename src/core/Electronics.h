@@ -13,6 +13,7 @@ class Electronics : public RacingCarPart
     public:
         Electronics(std::string, std::string, float, std::string, float, float, float, float);
         ~Electronics();
+        float getRating();
 };
 
 #endif

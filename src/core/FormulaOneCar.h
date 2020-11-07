@@ -17,6 +17,7 @@ class FormulaOneCar
         Tyre* tyres;
 
     public:
+        int points = 0;
         FormulaOneCar();
         ~FormulaOneCar();
         Chassis* getChassis();

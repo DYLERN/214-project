@@ -9,3 +9,9 @@ Electronics::Electronics(std::string type, std::string mat, float price, std::st
  }
 
  Electronics::~Electronics(){}
+
+float Electronics::getRating(){
+
+    return power;
+
+}

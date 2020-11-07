@@ -10,3 +10,9 @@ Engine::Engine(std::string type, std::string mat, float price, std::string desc,
  {
      
  }
+
+ float Engine::getRating(){
+
+    return horsePower;
+
+}
