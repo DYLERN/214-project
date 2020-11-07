@@ -26,7 +26,7 @@ int main() {
 
     std::srand(std::time(0));
 
-    int numCars = 10;
+    const int numCars = 10;
 
     RacingCarConstructor* bluePrints[numCars];
     Engineer* engineers[numCars];
