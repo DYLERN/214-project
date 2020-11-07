@@ -24,6 +24,8 @@
 
 int main() {
 
+    std::srand(std::time(0));
+
     int numCars = 10;
 
     RacingCarConstructor* bluePrints[numCars];
@@ -31,7 +33,7 @@ int main() {
     FormulaOneCar* cars[numCars];
     std::string names[numCars] = {"Alan", "Connor", "Liam", "Dylan", "Nic", "Josh", "Alex", "Ben", "Billy", "Rob"};
     std::string teams[numCars] = {"RedBull", "Redbull", "Mercedez", "Mercedez", "Ford", "Ford", "Lamborghini", "Lamborghini", "Ferrari", "Ferrari"};
-    std::string models[numCars] = {"FX04", "FX05", "FX06", "FX07", "FX08", "FX09", "FX10", "FX11", "FX12", "FX13",};
+    std::string models[numCars] = {"FX04", "FX05", "FX06", "FX07", "FX08", "FX09", "FX10", "FX11", "FX12", "FX13"};
 
     for(int i = 0; i < numCars; i++)
     {

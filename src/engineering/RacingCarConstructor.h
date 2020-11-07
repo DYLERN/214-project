@@ -10,6 +10,9 @@
 
 class RacingCarConstructor
 {
+    private:
+    float getRand();
+
     protected:
         AerodynamicsDepartment* aeroDepartment;
         ChassisDepartment* chassisDepartment;

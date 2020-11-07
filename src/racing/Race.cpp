@@ -31,13 +31,30 @@ void Race::testTimes()
 std::array<std::shared_ptr<results>,10> Race::commenceRace()
 {
     //times/grid results
-    sort();
 
-    for (int i = 0; i < 10; i++)
-    {
+    int scoring = 10;
+    int maxPos = 0;
 
-        carList[i]->points += times[i];
+    for(int i = 0; i < 10; i++){
+
+        for(int j = 0; j < 10; j++){
+
+            if(times[j] < times[maxPos]){
+
+                maxPos = j;
+
+            }
+
+        }
+
+        carList[maxPos]->points += scoring;
+        times[maxPos] = 0;
+        scoring--;
+
     }
+
+    scoring = 10;
+    maxPos = 0;
 
     update();
     //areodynamics
@@ -48,9 +65,6 @@ std::array<std::shared_ptr<results>,10> Race::commenceRace()
 
         tempAero[i] = carList[i]->getAerodynamics()->getRating();
     }
-
-    int scoring = 10;
-    int maxPos = 0;
 
     for (int i = 0; i < 10; i++)
     {
@@ -251,24 +265,6 @@ std::array<std::shared_ptr<results>,10> Race::commenceRace()
 
     return result;
 
-}
-
-void Race::sort()
-{
-    int i, j;
-    for (i = 0; i < 10 - 1; i++)
-    {
-        for (j = 0; j < 10 - i - 1; j++)
-        {
-            if (times[j] > times[j + 1])
-            {
-
-                int temp = times[j];
-                times[j] = times[j + 1];
-                times[j + 1] = temp;
-            }
-        }
-    }
 }
 
 void Race::update(){
