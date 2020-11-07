@@ -2,7 +2,6 @@
 #define __SIMULATEDCAR_H__
 
 #include <string>
-#include "reportCareTaker.h"
 #include "virtualTyre.h"
 #include "virtualChassis.h"
 #include "virtualEngine.h"
@@ -10,11 +9,16 @@
 #include "virtualElectronics.h"
 #include "report.h"
 
-
+/**
+ * Class acts as invoker in Memento Pattern
+ * Class contains all virtual parts nessecary for a SimulatedCar to run.
+ * There are seperate methods to test every part of the car individually in the simulation
+ * There is a method to test the entire car at once as well.
+ * @author Connor Mayston
+ */
 class SimulatedCar{
 
 private:
-reportCareTaker* careTaker;
 virtualChassis* chassis;
 virtualTyre* tyres;
 virtualEngine* engine;
@@ -29,7 +33,6 @@ void setTyres(virtualTyre*);
 void setEngine(virtualEngine*);
 void setAero(virtualAerodynamics*);
 void setElectronics(virtualElectronics*);
-void setElectronics();
 
 report testCar(float, float, std::string);
 void testChassis();

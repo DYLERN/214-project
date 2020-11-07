@@ -3,6 +3,11 @@
 
 #include "../pch.h"
 
+
+/**
+ * Memento class
+ * @author Connor Mayston
+ */
 class report{
 
     private:

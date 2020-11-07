@@ -4,6 +4,12 @@
 #include "Command.h"
 #include <iostream>
 
+/**
+ * ConcreteCommand class
+ * Child of Command.h
+ * Execute function slows car down using cout
+ * @author Connor Mayston
+ */
 class decreaseThrottle : public Command{
 
 public:

@@ -4,6 +4,12 @@
 #include "Command.h"
 #include <iostream>
 
+/**
+ * ConcreteCommand class
+ * Child of Command.h
+ * Execute function performs acceleration of car using cout
+ * @author Connor Mayston
+ */
 class accelerate : public Command{
 
 public:

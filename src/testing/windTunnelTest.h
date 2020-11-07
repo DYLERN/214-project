@@ -11,6 +11,12 @@
 #include "gearDown.h"
 #include "report.h"
 
+/**
+ * Invoker class of Command pattern and Memento Pattern
+ * Class that is used to test ForumlaOneCar in a wind tunnel
+ * Class holds instances of all Concrete Commands
+ * @author Connor Mayston
+ */
 class windTunnelTest{
 
 private:

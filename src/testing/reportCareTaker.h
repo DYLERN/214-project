@@ -4,6 +4,10 @@
 #include "../pch.h"
 #include "report.h"
 
+/**
+ * CareTaker class
+ * @author Connor Mayston
+ */
 class reportCareTaker{
 
 private:
