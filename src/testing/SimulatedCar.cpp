@@ -1,5 +1,4 @@
 #include "SimulatedCar.h"
-#include <iostream>
 
 SimulatedCar::SimulatedCar(){
 

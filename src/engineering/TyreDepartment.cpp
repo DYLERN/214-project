@@ -1,6 +1,5 @@
 #include "TyreDepartment.h"
 #include "../testing/virtualTyre.h"
-#include <iostream>
 
 using namespace std;
 

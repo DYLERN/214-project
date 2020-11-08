@@ -1,6 +1,5 @@
 #include "ElectronicsDepartment.h"
 #include "../testing/virtualElectronics.h"
-#include <iostream>
 
 using namespace std;
 

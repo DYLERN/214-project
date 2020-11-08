@@ -1,6 +1,4 @@
 #include "CompoundTyre.h"
-#include "string"
-#include <iostream>
 CompoundTyre::CompoundTyre() {
 
 }

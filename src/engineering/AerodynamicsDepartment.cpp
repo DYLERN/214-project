@@ -1,6 +1,5 @@
 #include "AerodynamicsDepartment.h"
 #include "../testing/virtualAerodynamics.h"
-#include <iostream>
 
 using namespace std;
 

@@ -3,6 +3,7 @@
 
 #include "EngineeringDepartment.h"
 #include "../core/Aerodynamics.h"
+#include "../pch.h"
 
 class AerodynamicsDepartment : public EngineeringDepartment
 {

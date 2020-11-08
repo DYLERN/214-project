@@ -1,6 +1,6 @@
 #ifndef HARD_H
 #define HARD_H
-#include <iostream>
+#include "../pch.h"
 #include "CompoundTyre.h"
 using namespace std;
 /**

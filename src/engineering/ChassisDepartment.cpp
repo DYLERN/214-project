@@ -1,6 +1,5 @@
 #include "ChassisDepartment.h"
 #include "../testing/virtualChassis.h"
-#include <iostream>
 
 using namespace std;
 

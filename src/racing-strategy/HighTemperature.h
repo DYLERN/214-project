@@ -1,6 +1,6 @@
 #ifndef HIGHTEMPERATURE_H
 #define HIGHTEMPERATURE_H
-#include <iostream>
+#include "../pch.h"
 #include "PitStopStrategy.h"
 using namespace std;
 class HighTemperature : public PitStopStrategy {

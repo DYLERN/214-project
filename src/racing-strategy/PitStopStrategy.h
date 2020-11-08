@@ -1,6 +1,6 @@
 #ifndef PITSTOPSTRATEGY_H
 #define PITSTOPSTRATEGY_H
-#include <iostream>
+#include "../pch.h"
 using namespace std;
 class PitStopStrategy {
 

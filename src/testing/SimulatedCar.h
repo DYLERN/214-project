@@ -1,7 +1,7 @@
 #ifndef __SIMULATEDCAR_H__
 #define __SIMULATEDCAR_H__
 
-#include <string>
+#include "../pch.h"
 #include "virtualTyre.h"
 #include "virtualChassis.h"
 #include "virtualEngine.h"

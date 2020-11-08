@@ -1,7 +1,7 @@
 #ifndef __VIRTUALPARTS_H__
 #define __VIRTUALPARTS_H__
 
-#include <string>
+#include "../pch.h"
 
 /**
  * Not part of a design pattern

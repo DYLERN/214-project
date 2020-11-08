@@ -1,5 +1,4 @@
 #include "windTunnelTest.h"
-#include <iostream>
 
 windTunnelTest::windTunnelTest(FormulaOneCar* car){
 

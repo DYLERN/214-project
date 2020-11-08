@@ -10,6 +10,7 @@
 #include "gearUp.h"
 #include "gearDown.h"
 #include "report.h"
+#include "../pch.h"
 
 /**
  * Invoker class of Command pattern and Memento Pattern

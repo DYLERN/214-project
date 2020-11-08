@@ -6,7 +6,7 @@
 #include "Engine.h"
 #include "Electronics.h"
 #include "Tyre.h"
-#include <string>
+#include "../pch.h"
 
 class FormulaOneCar
 {

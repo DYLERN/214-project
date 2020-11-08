@@ -1,6 +1,6 @@
 #ifndef COMPOUNDTYRE_H
 #define COMPOUNDTYRE_H
-#include <iostream>
+#include "../pch.h"
 using namespace std;
 
 

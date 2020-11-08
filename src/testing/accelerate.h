@@ -2,7 +2,7 @@
 #define __ACCELERATE_H__
 
 #include "Command.h"
-#include <iostream>
+#include "../pch.h"
 
 /**
  * ConcreteCommand class

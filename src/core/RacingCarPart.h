@@ -1,7 +1,7 @@
 #ifndef RACINGCARPART_H
 #define RACINGCARPART_H
 
-#include <string>
+#include "../pch.h"
 
 class RacingCarPart
 {

@@ -3,6 +3,7 @@
 
 #include "EngineeringDepartment.h"
 #include "../core/Tyre.h"
+#include "../pch.h"
 
 class TyreDepartment : public EngineeringDepartment
 {
