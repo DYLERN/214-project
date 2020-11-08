@@ -1,5 +1,10 @@
 #pragma once
 #include <iostream>
+
+/**
+ * Class is used as a struct mostly to store all the results from the race and then a print() method to format the results nicely to display.
+ * @author Joshua Reddy
+ */
 class results{
   private:
   std::string raceName;

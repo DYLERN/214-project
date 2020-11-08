@@ -31,6 +31,11 @@ void Race::testTimes()
 
 }
 
+/**
+ * Method uses an algorithm that compares all the cars specs against eachother and assigns points to each car depending on how they rank against eachoter.
+ * The winner is then declared based on which car has the most points at the end. 
+ * The results are creted as results.h objects and returned as an array to be printed.
+ */
 std::array<std::shared_ptr<results>,10> Race::commenceRace()
 {
     //times/grid results
