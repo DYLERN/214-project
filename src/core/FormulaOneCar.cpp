@@ -1,5 +1,7 @@
 #include "FormulaOneCar.h"
 
+using namespace std;
+
 FormulaOneCar::FormulaOneCar()
 {
 

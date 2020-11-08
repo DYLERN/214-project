@@ -8,8 +8,10 @@ SimulatedCar::SimulatedCar(){
     engine = NULL;
     electronics = NULL;
     aero = NULL;
+    electronics = NULL;
 
 }
+
 SimulatedCar::~SimulatedCar(){
 
     if(chassis != NULL){
@@ -46,23 +48,11 @@ SimulatedCar::~SimulatedCar(){
 
 void SimulatedCar::setChassis(virtualChassis* chass){
 
-    if(chassis != NULL){
-
-        delete chassis;
-
-    }
-
     chassis = chass;
 
 }
 
 void SimulatedCar::setTyres(virtualTyre* tyre){
-
-    if(tyres != NULL){
-
-        delete tyres;
-
-    }
 
     tyres = tyre;
 
@@ -70,23 +60,11 @@ void SimulatedCar::setTyres(virtualTyre* tyre){
 
 void SimulatedCar::setEngine(virtualEngine* eng){
 
-    if(engine != NULL){
-
-        delete engine;
-
-    }
-
     engine = eng;
 
 }
 
 void SimulatedCar::setAero(virtualAerodynamics* aer){
-
-    if(aero != NULL){
-
-        delete aero;
-
-    }
 
     aero = aer;
 
@@ -94,17 +72,11 @@ void SimulatedCar::setAero(virtualAerodynamics* aer){
 
 void SimulatedCar::setElectronics(virtualElectronics* elec){
 
-    if(electronics != NULL){
-
-        delete electronics;
-
-    }
-
     electronics = elec;
 
 }
 
-void SimulatedCar::testCar(float maxPrice, float maxWeight, std::string weather){
+report SimulatedCar::testCar(float maxPrice, float maxWeight, std::string weather){
 
     std::string result = "";
 
@@ -119,7 +91,7 @@ void SimulatedCar::testCar(float maxPrice, float maxWeight, std::string weather)
 
         if(price <= maxPrice){
 
-            result += "Budget: Car is within budget.\n";
+            result += "Budget: Car budget of R" + std::to_string(price) + " is within total budget of R" + std::to_string(maxPrice) + ".\n";
 
         }else{
 
@@ -131,7 +103,7 @@ void SimulatedCar::testCar(float maxPrice, float maxWeight, std::string weather)
 
         if(weight <= maxWeight){
 
-            result += "Weight: Car is within weight limit.\n";
+            result += "Weight: Car Weight of " + std::to_string(weight) + "Kg is within total weight limit of " + std::to_string(maxWeight) + "Kg.\n";
 
         }else{
 
@@ -143,8 +115,8 @@ void SimulatedCar::testCar(float maxPrice, float maxWeight, std::string weather)
         int temp = rand() % 100 + 2600;
         int speed = rand() % 70 + 300;
 
-        result += "Lap Completed in: " + std::to_string(time) + " seconds during " + weather + " weather.\nMax engine temperature: " + std::to_string(temp) + "\nTop speed: " + std::to_string(speed) + 
-        "\nCar safety check: Success\nFinal decision: Formula One Car is good to go.\n";
+        result += "Lap Completed in: " + std::to_string(time) + " seconds during " + weather + " weather.\nMax engine temperature: " + std::to_string(temp) + "°C\nTop speed: " + std::to_string(speed) + 
+        " KM/H\nCar safety check: Success\nFinal decision: Formula One Car is good to go.\n";
 
     }else{
 
@@ -153,6 +125,8 @@ void SimulatedCar::testCar(float maxPrice, float maxWeight, std::string weather)
     }
 
     std::cout << result << std::endl;
+
+    return report(result);
 
 }
 

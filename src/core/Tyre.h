@@ -12,6 +12,7 @@ class Tyre : public RacingCarPart
     public:
         Tyre(std::string, std::string, float, std::string, float, float, float);
         ~Tyre();
+        float getRating();
 };
 
 #endif

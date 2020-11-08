@@ -11,3 +11,9 @@ Tyre::~Tyre()
 {
     
 }
+
+float Tyre::getRating(){
+
+    return thickness;
+
+}

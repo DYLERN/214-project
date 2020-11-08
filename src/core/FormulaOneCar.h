@@ -6,6 +6,7 @@
 #include "Engine.h"
 #include "Electronics.h"
 #include "Tyre.h"
+#include <string>
 
 class FormulaOneCar
 {
@@ -17,6 +18,10 @@ class FormulaOneCar
         Tyre* tyres;
 
     public:
+        std::string driverName;
+        std::string team;
+        std::string carModel;
+        int points = 0;
         FormulaOneCar();
         ~FormulaOneCar();
         Chassis* getChassis();

@@ -1,4 +1,14 @@
-#include "pch.h"
+#include "core/FormulaOneCar.h"
+#include "engineering/Engineer.h"
+#include "engineering/CurrentCarConstructor.h"
+#include "engineering/RacingCarConstructor.h"
+#include "testing/SimulatedCar.h"
+#include "testing/virtualAerodynamics.h"
+#include "testing/virtualChassis.h"
+#include "testing/virtualElectronics.h"
+#include "testing/virtualEngine.h"
+#include "testing/virtualParts.h"
+#include "testing/virtualTyre.h"
 
 #include <random>
 
@@ -8,28 +18,66 @@
 #include "logistics/LogisticsManager.h"
 #include "engineering/CurrentCarConstructor.h"
 #include "engineering/Engineer.h"
+#include "testing/windTunnelTest.h"
+#include "racing/Race.h"
+#include "racing/results.h"
 
 int main() {
+
     std::srand(std::time(0));
-    auto plane = std::make_shared<Plane>("ADZ-903");
-    std::vector<std::shared_ptr<Truck> > trucks = {std::make_shared<Truck>("BG 64 UI"), std::make_shared<Truck>("WD 31 PD")};
 
-    CurrentCarConstructor constructor;
-    Engineer engineer(&constructor);
+    const int numCars = 10;
 
-    auto car = std::shared_ptr<FormulaOneCar>(engineer.constructCar());
+    RacingCarConstructor* bluePrints[numCars];
+    Engineer* engineers[numCars];
+    FormulaOneCar* cars[numCars];
+    std::string names[numCars] = {"Alan", "Connor", "Liam", "Dylan", "Nic", "Josh", "Alex", "Ben", "Billy", "Rob"};
+    std::string teams[numCars] = {"RedBull", "Redbull", "Mercedez", "Mercedez", "Ford", "Ford", "Lamborghini", "Lamborghini", "Ferrari", "Ferrari"};
+    std::string models[numCars] = {"FX04", "FX05", "FX06", "FX07", "FX08", "FX09", "FX10", "FX11", "FX12", "FX13"};
 
-    std::shared_ptr<InventoryItem> drill = std::make_shared<Equipment>("Drill", 10000, 5);
-    std::shared_ptr<InventoryItem> wrench = std::make_shared<Equipment>("Wrench", 10000, 6);
-    std::shared_ptr<InventoryItem> jack = std::make_shared<Equipment>("Jack", 5000, 10);
+    for(int i = 0; i < numCars; i++)
+    {
+        bluePrints[i] = new CurrentCarConstructor();
+        engineers[i] = new Engineer(bluePrints[i]);
+        cars[i] = engineers[i]->constructCar();
+        cars[i]->carModel = models[i];
+        cars[i]->driverName = names[i];
+        cars[i]->team = teams[i];
+    }
 
-    LogisticsManager manager(plane, trucks);
-    manager.setDestination(std::make_shared<Destination>("Spain", EUROPEAN));
-    manager.addCar(car);
-    manager.addInventoryItem(drill);
-    manager.addInventoryItem(wrench);
-    manager.addInventoryItem(jack);
-    manager.dispatch();
+
+
+    windTunnelTest* test = new windTunnelTest(cars[0]);
+
+    test->testAcceleration();
+    test->testBreaking();
+
+
+
+    delete test;
+
+    Race *race = new Race(cars, "GrandPrix", "Europe");
+
+    race->testTimes();
+    race->testTimes();
+    race->testTimes();
+
+    std::array<std::shared_ptr<results>,10> reports = race->commenceRace();
+
+    for(int i = 0; i < 10; i++){
+
+        reports[i]->print();
+
+    }
+
+    delete race;
+
+    for(int i = 0; i < numCars; i++)
+    {
+        delete cars[i];
+        delete engineers[i];
+        delete bluePrints[i];
+    }
 
     // manager.joinAll();
     
