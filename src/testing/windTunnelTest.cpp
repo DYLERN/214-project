@@ -53,6 +53,11 @@ windTunnelTest::~windTunnelTest(){
 
 }
 
+
+/**
+ * Function check if there are available tickets then tests the car by slowly getting up to speed and then hard breaking using commands.
+ * Funcion is an invoker in memento pattern as it returns a report object.
+ */
 report windTunnelTest::testBreaking(){
 
     if(numTickets > 0){
@@ -103,6 +108,10 @@ report windTunnelTest::testBreaking(){
 
 }
 
+/**
+ * Function check if there are available tickets then tests the car by quickly getting to max speed using commands.
+ * Funcion is an invoker in memento pattern as it returns a report object.
+ */
 report windTunnelTest::testAcceleration(){
 
     if(numTickets > 0){

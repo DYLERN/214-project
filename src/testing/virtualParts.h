@@ -3,7 +3,11 @@
 
 #include <string>
 
-
+/**
+ * Not part of a design pattern
+ * Parent of virtual parts.
+ * @author Connor Mayston
+ */
 class virtualParts{
 
 protected:

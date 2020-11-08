@@ -76,6 +76,10 @@ void SimulatedCar::setElectronics(virtualElectronics* elec){
 
 }
 
+/**
+ * Function tests every component of the car one by one and checks the total weight and price of the car against a limit.
+ * Funcion is an invoker in memento pattern as it returns a report object.
+ */
 report SimulatedCar::testCar(float maxPrice, float maxWeight, std::string weather){
 
     std::string result = "";

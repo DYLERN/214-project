@@ -3,6 +3,12 @@
 
 #include "virtualParts.h"
 
+/**
+ * Not part of a design pattern
+ * Child of virtualParts.h
+ * Constructor sets local variable and inherited variables.
+ * @author Connor Mayston
+ */
 class virtualTyre : public virtualParts{
 
 protected:

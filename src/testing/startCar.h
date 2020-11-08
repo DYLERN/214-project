@@ -4,6 +4,12 @@
 #include "Command.h"
 #include <iostream>
 
+/**
+ * ConcreteCommand class
+ * Child of Command.h
+ * Execute function turns car on and prints a statement
+ * @author Connor Mayston
+ */
 class startCar : public Command{
 
 public:
