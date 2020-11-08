@@ -24,8 +24,20 @@ void FormulaOneInterface::demoBuildAndTest()
 
     windTunnelTest test(allCars[0].get());
 
+    SimulatedCar* simCar = new SimulatedCar();
+    simCar->setChassis(new virtualChassis(100, 10000, "Chassis model 5", 1000, 100));
+    simCar->setAero(new virtualAerodynamics(100, 10000, "Aeryodynamics model 50", 1000, 100));
+    simCar->setEngine(new virtualEngine(1000, 10000, "Engine with 100 Horse Power", 1000, 100));
+    simCar->setElectronics(new virtualElectronics(50, 10000, "Electronics 3000", 1000, 100));
+    simCar->setTyres(new virtualTyre(50, 60, 10000, "Hard tyres", 1000, 100));
+
+    caretaker.addSimReport(simCar->testCar(60000, 4000, "rainy"));
+
     caretaker.addWindReport(test.testAcceleration());
     caretaker.addWindReport(test.testBreaking());
+
+    delete simCar;
+
 }
 
 void FormulaOneInterface::demoLogistics()
@@ -71,10 +83,6 @@ void FormulaOneInterface::demoRacing()
     }
 
     Race race(rawArray, "Australian Grand Prix", "Australia");
-    race.testTimes();
-    race.testTimes();
-    race.testTimes();
-
     race.testTimes();
     race.testTimes();
     race.testTimes();
