@@ -3,6 +3,8 @@
 
 #include "../pch.h"
 
+#include "../core/RacingCarPart.h"
+
 #include <sstream>
 #include <iomanip>
 
@@ -51,8 +53,12 @@ public:
  * @since 04-11-2020
  */
 class Part : public InventoryItem {
+private:
+    std::shared_ptr<RacingCarPart> adaptee;
+
 public:
     Part(std::string name, double weight, double volume);
+    Part(std::shared_ptr<RacingCarPart> part);
     std::string describe(bool showIndex, int index);
 };
 

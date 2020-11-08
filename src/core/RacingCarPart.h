@@ -22,8 +22,11 @@ class RacingCarPart
             this->weight = weight;
         }
         ~RacingCarPart(){};
+        std::string getType();
+        std::string getMaterial();
+        float getPricing();
         std::string getDescription();
-
+        float getWeight();
 
 };
 

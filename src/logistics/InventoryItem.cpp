@@ -46,6 +46,10 @@ Part::Part(std::string name, double weight, double volume) : InventoryItem(name,
 {
 }
 
+Part::Part(std::shared_ptr<RacingCarPart> part): adaptee(part), InventoryItem(part->getType(), part->getWeight(), part->getWeight() / 2710)
+{
+}
+
 std::string Part::describe(bool showIndex, int index)
 {
     std::stringstream ss;
